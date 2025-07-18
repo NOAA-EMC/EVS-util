@@ -24,7 +24,6 @@ plots_job=$2
 if [ $run_job == atmos ]; then
     qsub ${drivers_dir}/jevs_global_ens_atmos_${plots_job}_plots.sh
 elif [ $run_job == wave ]; then
-    qsub ${drivers_dir}/jevs_global_ens_wave_${plots_job}_plots.sh
-elif [ $run_job == chem ]; then
-    qsub ${drivers_dir}/jevs_global_ens_chem_gefs_${plots_job}.sh
+    qsub ${drivers_dir}/jevs_global_ens_wave_${plots_job}_plots_last31days.sh
+    qsub ${drivers_dir}/jevs_global_ens_wave_${plots_job}_plots_last90days.sh
 fi
