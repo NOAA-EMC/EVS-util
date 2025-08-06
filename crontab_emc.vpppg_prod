@@ -1,0 +1,20 @@
+SHELL=/bin/bash -l
+
+##############################################################################
+# Production machine cronjobs, contact Alicia Bentley (alicia.bentley@noaa.gov)
+00 05 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_gfs_wmo_verif.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_gfs_wmo_verif.out 2>&1
+10 09 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_gfs_legacy_verif_v25.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_gfs_legacy_verif_v25.out 2>&1
+30 4 * * *  /u/emc.vpppg/cron_jobs/scripts/verification/global/run_emc_global_archive.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_emc_global_archive_0430.out 2>&1
+30 10 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_emc_global_archive.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_emc_global_archive_1030.out 2>&1
+30 16 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_emc_global_archive.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_emc_global_archive_1630.out 2>&1
+30 22 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_emc_global_archive.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_emc_global_archive_2230.out 2>&1
+05 02 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_untar_ndbc_buoy.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_untar_ndbc_buoy.out 2>&1
+00 06 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_archive_jason3.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_archive_jason3.out 2>&1
+02 19 * * * /u/emc.vpppg/cron_jobs/scripts/verification/run_archive_validation_data.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_archive_validation_data.out 2>&1
+00 11 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_transfer_data_across_machines.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_transfer_data_across_machines.out 2>&1
+#### For GFSv17/GEFSv13 eval
+40 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/cron_send_eval_dev.sh 1> /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/log_cron_send_eval_dev_0540.out 2>&1
+40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/cron_send_eval_dev.sh 1> /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/log_cron_send_eval_dev_1140.out 2>&1
+40 17 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/cron_send_eval_dev.sh 1> /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/log_cron_send_eval_dev_1740.out 2>&1
+40 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/cron_get_from_prod.sh 1> /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/log_cron_get_from_prod_2330.out 2>&1
+#############################################################################
