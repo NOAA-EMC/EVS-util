@@ -47,7 +47,7 @@ fi
 
 # Set STEPS that are run for each COMPONENT
 if [ $COMPONENT = analyses ]; then
-    STEPS="stats"
+    STEPS="prep stats"
 elif [ $COMPONENT = aqm ]; then
     STEPS="prep stats"
 elif [ $COMPONENT = cam ]; then

@@ -21,4 +21,5 @@ module reset
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
 plots_job=$2
-qsub ${drivers_dir}/jevs_aqm_grid2obs_${run_job}_plots_${plots_job}.sh
+verf=$3
+qsub ${drivers_dir}/jevs_aqm_${verf}_${run_job}_plots_${plots_job}.sh
