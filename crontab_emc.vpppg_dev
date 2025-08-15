@@ -217,13 +217,9 @@ SHELL=/bin/bash -l
 ##########################
 30 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_prep.sh atmos 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_prep_atmos.out 2>&1
 45 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 00 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_00.out 2>&1
-15 06 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 03 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_03.out 2>&1
-15 07 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 06 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_06.out 2>&1
-30 07 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 09 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_09.out 2>&1
-45 07 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 12 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_12.out 2>&1
-15 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 15 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_15.out 2>&1
-45 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 18 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_18.out 2>&1
-15 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 21 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_21.out 2>&1
+15 06 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 06 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_06.out 2>&1
+30 13 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 12 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_12.out 2>&1
+00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_stats.sh atmos 18 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_stats_atmos_18.out 2>&1
 45 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_plots.sh atmos grid2obs_aeronet_plots_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_plots_atmos_grid2obs_aeronet_last90days.out 2>&1
 45 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_plots.sh atmos grid2obs_airnow_plots_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_plots_atmos_grid2obs_airnow_last90days.out 2>&1
 45 01 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_chem_plots.sh atmos grid2obs_aeronet_plots_last31days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_chem_plots_atmos_grid2obs_aeronet_last31days.out 2>&1
