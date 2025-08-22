@@ -22,7 +22,7 @@ drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 subcomponent_job=$1
 plots_job=$2
 if [ $subcomponent_job == firewx ]; then
-    qsub ${drivers_dir}/jevs_cam_nam_firewxnest_${plots_job}_plots.sh
+    qsub ${drivers_dir}/jevs_cam_nam_firewxnest_${plots_job}_plots_last31days.sh
 elif [ $subcomponent_job == ens ]; then
     qsub ${drivers_dir}/jevs_cam_href_${plots_job}_plots.sh
 elif [ $subcomponent_job == det ]; then
