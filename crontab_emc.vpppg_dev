@@ -154,6 +154,7 @@ SHELL=/bin/bash -l
 #################
 00 03 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_prep.sh atmos 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_prep_atmos.out 2>&1
 00 04 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_prep.sh atmos_headline 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_prep_atmos_headline.out 2>&1
+
 30 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_stats.sh atmos gefs grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_stats_atmos_gefs_grid2grid.out 2>&1
 00 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_stats.sh atmos ecme grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_stats_atmos_ecme_grid2grid.out 2>&1
 30 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_stats.sh atmos cmce grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_stats_atmos_cmce_grid2grid.out 2>&1
@@ -170,6 +171,7 @@ SHELL=/bin/bash -l
 00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_stats.sh atmos_headline gfs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_stats_atmos_headline_gfs.out 2>&1
 00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_stats.sh atmos_headline gefs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_stats_atmos_headline_gefs.out 2>&1
 00 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_stats.sh atmos_headline naefs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_stats_atmos_headline_naefs.out 2>&1
+
 00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_plots.sh atmos naefs_precip_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_plots_atmos_naefs_precip_last90days.out 2>&1
 00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_plots.sh atmos naefs_precip_last31days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_plots_atmos_naefs_precip_last31days.out 2>&1
 00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_ens_plots.sh atmos naefs_precip_spatial 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_ens_plots_atmos_naefs_precip_spatial.out 2>&1
