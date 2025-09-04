@@ -25,8 +25,6 @@ if [ $run_job == atmos ]; then
     qsub ${drivers_dir}/jevs_global_ens_naefs_atmos_prep.sh
 elif [ $run_job == atmos_headline ]; then
     qsub ${drivers_dir}/jevs_global_ens_headline_prep.sh
-elif [ $run_job == chem ]; then
-    qsub ${drivers_dir}/jevs_global_ens_chem_grid2obs_prep.sh
 elif [ $run_job == wave ]; then
-    qsub ${drivers_dir}/jevs_global_ens_wave_grid2obs_prep.sh
+    qsub ${drivers_dir}/jevs_global_ens_wave_prep.sh
 fi
