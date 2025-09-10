@@ -23,4 +23,6 @@ run_job=$1
 plots_job=$2
 if [ $run_job == atmos ]; then
     qsub ${drivers_dir}/jevs_global_chem_atmos_${plots_job}.sh
+else
+    qsub ${drivers_dir}/jevs_global_chem_headline_${plots_job}.sh
 fi
