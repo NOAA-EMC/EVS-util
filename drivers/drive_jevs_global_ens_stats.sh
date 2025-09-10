@@ -48,7 +48,7 @@ elif [ $run_job == atmos_headline ]; then
         qsub ${drivers_dir}/jevs_global_ens_${run_model}_headline_grid2grid_stats.sh
     done
 elif [ $run_job == wave ]; then
-    qsub ${drivers_dir}/jevs_global_ens_wave_grid2obs_stats.sh
+    qsub ${drivers_dir}/jevs_global_ens_gefs_wave_grid2obs_stats.sh
 elif [ $run_job == chem_grid2obs_airnow ]; then
     run_vhr=$(($vhr-1))
     if [ $run_vhr -lt 10 ]; then
