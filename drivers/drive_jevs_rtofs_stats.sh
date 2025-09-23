@@ -21,9 +21,9 @@ module reset
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 g2g_obs="aviso ghrsst osisaf smap smos"
 for obs in ${g2g_obs}; do
-    qsub ${drivers_dir}/jevs_rtofs_${obs}_grid2grid_stats.sh
+    qsub ${drivers_dir}/jevs_stats_rtofs_${obs}_grid2grid.sh
 done
 g2o_obs="argo ndbc"
 for obs in ${g2o_obs}; do
-    qsub ${drivers_dir}/jevs_rtofs_${obs}_grid2obs_stats.sh
+    qsub ${drivers_dir}/jevs_stats_rtofs_${obs}_grid2obs.sh
 done

@@ -19,4 +19,4 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-qsub ${drivers_dir}/jevs_rtofs_prep.sh
+qsub ${drivers_dir}/jevs_prep_rtofs.sh
