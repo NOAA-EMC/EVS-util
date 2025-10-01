@@ -27,13 +27,13 @@ elif [ $subcomponent_job == ens ]; then
     qsub ${drivers_dir}/jevs_cam_href_${plots_job}_plots.sh
 elif [ $subcomponent_job == det ]; then
     if [ $plots_job == grid2obs ]; then
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last31days.sh
+        ##qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last31days.sh
         qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last90days.sh
     elif [ $plots_job == precip ]; then
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last31days.sh
+        ##qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last31days.sh
         qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last90days.sh
     elif [ $plots_job == snowfall ]; then
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last31days.sh
+        ##qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last31days.sh
         qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots_last90days.sh
     else
         qsub -v vhr=$vhr ${drivers_dir}/jevs_cam_${plots_job}_plots.sh

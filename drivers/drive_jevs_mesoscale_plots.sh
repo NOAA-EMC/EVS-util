@@ -27,7 +27,8 @@ if [ $subcomponent_job == det ]; then
     else
         run_vhr=${vhr}
     fi
-    runtimes="last31days last90days"
+    ##runtimes="last31days last90days"
+    runtimes="last90days"
     if [ ${plots_job} == headline ]; then
         qsub -v vhr=$run_vhr ${drivers_dir}/jevs_mesoscale_${plots_job}_plots.sh
     else

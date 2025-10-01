@@ -19,5 +19,5 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-qsub ${drivers_dir}/jevs_plots_nfcens_wave_grid2obs_last31days.sh
+##qsub ${drivers_dir}/jevs_plots_nfcens_wave_grid2obs_last31days.sh
 qsub ${drivers_dir}/jevs_plots_nfcens_wave_grid2obs_last90days.sh
