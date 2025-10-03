@@ -24,7 +24,7 @@ types="temp sea_ice sst pres_lvls precip"
 periods="last90days"
 for period in ${periods}; do
     for type in ${types}; do
-        qsub ${drivers_dir}/jevs_subseasonal_grid2grid_${type}_plots_${period}.sh
+        qsub ${drivers_dir}/jevs_plots_subseasonal_grid2grid_${type}_${period}.sh
     done
-    qsub ${drivers_dir}/jevs_subseasonal_grid2obs_prepbufr_plots_${period}.sh
+    qsub ${drivers_dir}/jevs_plots_subseasonal_grid2obs_prepbufr_${period}.sh
 done

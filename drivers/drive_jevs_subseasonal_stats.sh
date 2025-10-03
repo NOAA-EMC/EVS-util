@@ -21,4 +21,4 @@ module reset
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 model_job=$1
 stats_job=$2
-qsub ${drivers_dir}/jevs_subseasonal_${model_job}_${stats_job}_stats.sh
+qsub ${drivers_dir}/jevs_stats_subseasonal_${model_job}_${stats_job}.sh

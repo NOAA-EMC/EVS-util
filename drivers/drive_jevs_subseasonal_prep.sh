@@ -20,5 +20,5 @@ module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 for model in cfs gefs obs; do
-    qsub ${drivers_dir}/jevs_subseasonal_${model}_prep.sh
+    qsub ${drivers_dir}/jevs_prep_subseasonal_${model}.sh
 done

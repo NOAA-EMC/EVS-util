@@ -21,5 +21,5 @@ module reset
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
 if [ $run_job == atmos ]; then
-    qsub ${drivers_dir}/jevs_global_chem_atmos_grid2obs_prep.sh
+    qsub ${drivers_dir}/jevs_prep_global_chem_atmos_grid2obs.sh
 fi

@@ -22,6 +22,6 @@ drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
 run_vhr=$2
 if [ $run_job == atmos ]; then
-   qsub -v vhr=${run_vhr} ${drivers_dir}/jevs_${COMPONENT}_${run_job}_grid2obs_aeronet_stats.sh
-   qsub -v vhr=${run_vhr} ${drivers_dir}/jevs_${COMPONENT}_${run_job}_grid2obs_airnow_stats.sh
+   qsub -v vhr=${run_vhr} ${drivers_dir}/jevs_stats_${COMPONENT}_${run_job}_grid2obs_aeronet.sh
+   qsub -v vhr=${run_vhr} ${drivers_dir}/jevs_stats_${COMPONENT}_${run_job}_grid2obs_airnow.sh
 fi
