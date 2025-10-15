@@ -19,4 +19,4 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-qsub ${drivers_dir}/jevs_wafs_atmos_stats.sh
+qsub ${drivers_dir}/jevs_stats_wafs_atmos.sh
