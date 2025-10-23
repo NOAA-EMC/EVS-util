@@ -19,9 +19,9 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-qsub -v vhr=$vhr ${drivers_dir}/jevs_analyses_rtma_grid2obs_stats.sh
-qsub -v vhr=$vhr ${drivers_dir}/jevs_analyses_rtma_precip_stats.sh
-qsub -v vhr=$vhr ${drivers_dir}/jevs_analyses_urma_grid2obs_stats.sh
-qsub -v vhr=$vhr ${drivers_dir}/jevs_analyses_urma_precip_stats.sh
-qsub -v vhr=$vhr ${drivers_dir}/jevs_analyses_rtma_ru_grid2obs_stats.sh
-qsub -v vhr=$vhr ${drivers_dir}/jevs_analyses_ccpa_precip_stats.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_rtma_grid2obs.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_rtma_precip.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_urma_grid2obs.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_urma_precip.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_rtma_ru_grid2obs.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_ccpa_precip.sh

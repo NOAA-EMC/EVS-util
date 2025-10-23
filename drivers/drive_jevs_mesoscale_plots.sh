@@ -30,18 +30,18 @@ if [ $subcomponent_job == det ]; then
     ##runtimes="last31days last90days"
     runtimes="last90days"
     if [ ${plots_job} == headline ]; then
-        qsub -v vhr=$run_vhr ${drivers_dir}/jevs_mesoscale_${plots_job}_plots.sh
+        qsub -v vhr=$run_vhr ${drivers_dir}/jevs_plots_mesoscale_${plots_job}.sh
     else
         for runtime in ${runtimes}; do
-           qsub -v vhr=$run_vhr ${drivers_dir}/jevs_mesoscale_${plots_job}_plots_${runtime}.sh
+           qsub -v vhr=$run_vhr ${drivers_dir}/jevs_plots_mesoscale_${plots_job}_${runtime}.sh
         done
     fi
 elif [ $subcomponent_job == ens ]; then
     if [ $plots_job == all ]; then
         verif_cases="grid2obs precip cnv cape cloud td2m"
         for verif_case in ${verif_cases}; do
-            qsub ${drivers_dir}/jevs_mesoscale_sref_${verif_case}_last90days_plots.sh
+            qsub ${drivers_dir}/jevs_plots_mesoscale_sref_${verif_case}_last90days.sh
         done
-        qsub ${drivers_dir}/jevs_mesoscale_sref_precip_spatial_plots.sh
+        qsub ${drivers_dir}/jevs_plots_mesoscale_sref_precip_spatial.sh
     fi
 fi

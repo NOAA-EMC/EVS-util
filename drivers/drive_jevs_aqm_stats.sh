@@ -20,5 +20,5 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-qsub -v vhr=$vhr ${drivers_dir}/jevs_aqm_atmos_grid2obs_stats.sh
-qsub -v vhr=$vhr ${drivers_dir}/jevs_aqm_atmos_grid2grid_stats.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_aqm_atmos_grid2obs.sh
+qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_aqm_atmos_grid2grid.sh

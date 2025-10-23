@@ -24,14 +24,14 @@ stats_job=$2
 if [ $subcomponent_job == det ]; then
     models="nam rap"
     for model in ${models}; do
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_mesoscale_${model}_${stats_job}_stats.sh
+        qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_mesoscale_${model}_${stats_job}.sh
     done
 elif [ $subcomponent_job == ens ]; then
     if [ ${stats_job} == all ]; then
         for all_job in grid2obs precip; do
-            qsub ${drivers_dir}/jevs_mesoscale_sref_${all_job}_stats.sh
+            qsub ${drivers_dir}/jevs_stats_mesoscale_sref_${all_job}.sh
         done
     else
-        qsub ${drivers_dir}/jevs_mesoscale_sref_${stats_job}_stats.sh
+        qsub ${drivers_dir}/jevs_stats_mesoscale_sref_${stats_job}.sh
     fi
 fi

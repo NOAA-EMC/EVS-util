@@ -19,4 +19,4 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-qsub ${drivers_dir}/jevs_mesoscale_grid2obs_prep.sh
+qsub ${drivers_dir}/jevs_prep_mesoscale_grid2obs.sh

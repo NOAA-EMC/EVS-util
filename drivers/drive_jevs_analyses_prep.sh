@@ -21,5 +21,5 @@ module reset
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 prep_job=$1
 if [ $prep_job == precip ]; then
-    qsub -v vhr=$vhr ${drivers_dir}/jevs_analyses_${prep_job}_prep.sh
+    qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_analyses_${prep_job}.sh
 fi
