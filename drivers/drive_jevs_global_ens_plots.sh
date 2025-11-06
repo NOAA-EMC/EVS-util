@@ -22,7 +22,7 @@ drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
 plots_job=$2
 if [ $run_job == atmos ]; then
-    qsub ${drivers_dir}/jevs_global_ens_atmos_${plots_job}_plots.sh
+    qsub ${drivers_dir}/jevs_plots_global_ens_atmos_${plots_job}.sh
 elif [ $run_job == wave ]; then
-    qsub ${drivers_dir}/jevs_global_ens_wave_${plots_job}_plots.sh
+    qsub ${drivers_dir}/jevs_plots_global_ens_wave_${plots_job}.sh
 fi

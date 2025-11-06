@@ -35,7 +35,7 @@ if [ $run_job == atmos ]; then
         models=${model}
     fi
     for run_model in ${models}; do
-        qsub ${drivers_dir}/jevs_global_ens_${run_model}_atmos_${verif_case}_stats.sh
+        qsub ${drivers_dir}/jevs_stats_global_ens_${run_model}_atmos_${verif_case}.sh
     done
 elif [ $run_job == atmos_headline ]; then
     model=$2
@@ -45,20 +45,20 @@ elif [ $run_job == atmos_headline ]; then
         models=${model}
     fi
     for run_model in ${models}; do
-        qsub ${drivers_dir}/jevs_global_ens_${run_model}_headline_grid2grid_stats.sh
+        qsub ${drivers_dir}/jevs_stats_global_ens_${run_model}_headline_grid2grid.sh
     done
 elif [ $run_job == wave ]; then
-    qsub ${drivers_dir}/jevs_global_ens_gefs_wave_grid2obs_stats.sh
+    qsub ${drivers_dir}/jevs_stats_global_ens_gefs_wave_grid2obs.sh
 elif [ $run_job == chem_grid2obs_airnow ]; then
     run_vhr=$(($vhr-1))
     if [ $run_vhr -lt 10 ]; then
         run_vhr=0${run_vhr}
     fi
-    qsub -v vhr=$run_vhr ${drivers_dir}/jevs_global_ens_gefs_${run_job}_stats.sh
+    qsub -v vhr=$run_vhr ${drivers_dir}/jevs_stats_global_ens_gefs_${run_job}.sh
 elif [ $run_job == chem_grid2obs_aeronet ]; then
     run_vhr=$((${vhr#0}-2))
     if [ $run_vhr -lt 10 ]; then
         run_vhr=0${run_vhr}
     fi
-    qsub -v vhr=$run_vhr ${drivers_dir}/jevs_global_ens_gefs_${run_job}_stats.sh
+    qsub -v vhr=$run_vhr ${drivers_dir}/jevs_stats_global_ens_gefs_${run_job}.sh
 fi

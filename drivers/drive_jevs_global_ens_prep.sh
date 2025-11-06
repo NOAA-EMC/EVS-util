@@ -21,10 +21,10 @@ module reset
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
 if [ $run_job == atmos ]; then
-    qsub ${drivers_dir}/jevs_global_ens_atmos_prep.sh
-    qsub ${drivers_dir}/jevs_global_ens_naefs_atmos_prep.sh
+    qsub ${drivers_dir}/jevs_prep_global_ens_atmos.sh
+    qsub ${drivers_dir}/jevs_prep_global_ens_naefs_atmos.sh
 elif [ $run_job == atmos_headline ]; then
-    qsub ${drivers_dir}/jevs_global_ens_headline_prep.sh
+    qsub ${drivers_dir}/jevs_prep_global_ens_headline.sh
 elif [ $run_job == wave ]; then
-    qsub ${drivers_dir}/jevs_global_ens_wave_prep.sh
+    qsub ${drivers_dir}/jevs_prep_global_ens_wave.sh
 fi
