@@ -20,4 +20,4 @@ module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
-qsub ${drivers_dir}/jevs_global_det_${run_job}_prep.sh
+qsub ${drivers_dir}/jevs_prep_global_det_${run_job}.sh

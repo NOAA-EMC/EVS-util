@@ -35,5 +35,5 @@ elif [ $run_job == atmos ]; then
     fi
 fi
 for model in $models; do
-    qsub ${drivers_dir}/jevs_global_det_${model}_${run_job}_${stats_job}_stats.sh
+    qsub ${drivers_dir}/jevs_stats_global_det_${model}_${run_job}_${stats_job}.sh
 done
