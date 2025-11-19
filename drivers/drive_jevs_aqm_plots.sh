@@ -22,4 +22,8 @@ drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
 plots_job=$2
 verf=$3
-qsub ${drivers_dir}/jevs_plots_aqm_atmos_${verf}_${run_job}_${plots_job}.sh
+if [ $run_job == headline ]; then
+	qsub ${drivers_dir}/jevs_plots_aqm_headline_${verf}_${plots_job}.sh
+else
+	qsub ${drivers_dir}/jevs_plots_aqm_atmos_${verf}_${run_job}_${plots_job}.sh
+fi
