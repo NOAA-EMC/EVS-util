@@ -22,11 +22,21 @@ drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 prep_job=$1
 if [ $prep_job == radar ]; then
     qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_${prep_job}.sh
-elif [ $prep_job == precip ]; then
-    models="hireswarw hireswarwmem2 hireswfv3 hrrr namnest"
-    for model in ${models}; do
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_${model}_${prep_job}.sh
-    done
+elif [ $prep_job == precip_hireswarw ]; then
+    qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_hireswarw_precip.sh
+elif [ $prep_job == precip_hireswarwmem2 ]; then
+    qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_hireswarwmem2_precip.sh
+elif [ $prep_job == precip_hireswfv3 ]; then
+    qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_hireswfv3_precip.sh
+elif [ $prep_job == precip_hrrr ]; then
+    qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_hrrr_precip.sh
+elif [ $prep_job == precip_namnest ]; then
+    qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_namnest_precip.sh
+#elif [ $prep_job == precip ]; then
+#    models="hireswarw hireswarwmem2 hireswfv3 hrrr namnest"
+#    for model in ${models}; do
+#        qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_${model}_${prep_job}.sh
+#    done
 elif [ $prep_job == severe ]; then
     qsub -v vhr=$vhr ${drivers_dir}/jevs_prep_cam_${prep_job}.sh
 elif [ $prep_job == severe_hrrr ]; then
