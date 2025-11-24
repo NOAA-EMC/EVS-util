@@ -14,7 +14,7 @@ SHELL=/bin/bash -l
 ##########################
 #### analyses
 ##########################
-00 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_prep.sh precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_prep_precip.out 2
+12 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_prep.sh precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_prep_precip.out 2
 00 00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,19,20,21,22,23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_stats.sh 1>/u/emc.vpppg/cron_jobs/
 15 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_stats.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_stats.out 2>&1
 30 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_plots.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_plots.out 2>&1
@@ -263,7 +263,7 @@ SHELL=/bin/bash -l
 
 15 15 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh glwu 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_glwu.out 2>&1
 00 17 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_devonly_emcrzdm.sh glwu wave $(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_devonly_emcrzdm_glwu_wave_PDYm1.out 2>&1
-00 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/cleanup/drive_cleanup_ptmp_daily.sh glwu wave $(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_cleanup_ptmp_daily_glwu_wave_PDYm2.out 2>&1
+15 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/cleanup/drive_cleanup_ptmp_daily.sh glwu wave $(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_cleanup_ptmp_daily_glwu_wave_PDYm2.out 2>&1
 ##########################
 #### hurricane
 ##########################
@@ -319,7 +319,7 @@ SHELL=/bin/bash -l
 
 30 15 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh nwps 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_nwps.out 2>&1
 00 17 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_devonly_emcrzdm.sh nwps wave $(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_devonly_emcrzdm_nwps_wave_PDYm1.out 2>&1
-00 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/cleanup/drive_cleanup_ptmp_daily.sh nwps wave $(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_cleanup_ptmp_daily_nwps_wave_PDYm2.out 2>&1
+15 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/cleanup/drive_cleanup_ptmp_daily.sh nwps wave $(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_cleanup_ptmp_daily_nwps_wave_PDYm2.out 2>&1
 ##########################
 #### rtofs
 ##########################
