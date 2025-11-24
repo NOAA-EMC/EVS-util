@@ -29,7 +29,7 @@ elif [ $run_job == atmos ]; then
         qsub ${drivers_dir}/jevs_plots_global_det_${run_job}_${plots_job}.sh
     else
         if [ $plots_job == grid2grid ]; then
-            subplots="means precip pres_levs sea_ice snow sst"
+            subplots="precip pres_levs sea_ice snow sst"
         elif [ $plots_job == grid2obs ]; then
             subplots="pres_levs ptype sfc"
         fi

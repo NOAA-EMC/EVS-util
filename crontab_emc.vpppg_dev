@@ -54,9 +54,9 @@ SHELL=/bin/bash -l
 30 13 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_stats.sh 23 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_stats_23.out 2>&1
 
 00 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh headline last90days grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2obs_headline_plots_last90days.out 2>&1
-02 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh hourly last31days grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2obs_hourly_plots_last31days.out 2>&1
-07 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh daily last90days grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2obs_daily_plots_last90days.out 2>&1
-14 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh hourly last31days grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2grid_hourly_plots_last31days.out 2>&1
+30 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh hourly last31days grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2obs_hourly_plots_last31days.out 2>&1
+00 06 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh daily last90days grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2obs_daily_plots_last90days.out 2>&1
+30 06 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh hourly last31days grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2grid_hourly_plots_last31days.out 2>&1
 ##50 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh daily last31days grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2obs_daily_plots_last31days.out 2>&1
 ##40 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh hourly last90days grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2obs_hourly_plots_last90days.out 2>&1
 ##20 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aqm_plots.sh hourly last90days grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aqm_grid2grid_hourly_plots_last90days.out 2>&1
