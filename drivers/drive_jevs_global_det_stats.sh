@@ -27,9 +27,9 @@ if [ $run_job == wave ]; then
     fi
 elif [ $run_job == atmos ]; then
     if [ $stats_job == grid2grid ]; then
-        models="cfs cmc cmc_regional dwd ecmwf fnmoc gfs imd jma metfra ukmet"
+        models="cfs cmc cmc_regional dwd ecmwf fnmoc gfs jma metfra ukmet"
     elif [ $stats_job == grid2obs ]; then
-        models="cfs cmc ecmwf fnmoc gfs imd jma ukmet"
+        models="cfs cmc ecmwf fnmoc gfs jma ukmet"
     else
         models="gfs"
     fi
