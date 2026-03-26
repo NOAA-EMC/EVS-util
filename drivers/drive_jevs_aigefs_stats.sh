@@ -8,7 +8,7 @@ set -x
 
 HOMEevs=/lfs/h2/emc/vpppg/noscrub/${USER}/EVS
 STEP=stats
-COMPONENT=global_det
+COMPONENT=aigefs
 
 now=$(date -u +%Y%m%d%H)
 vhr=$(echo $now | cut -c 9-10)
@@ -20,20 +20,17 @@ module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
-stats_job=$2
-if [ $run_job == wave ]; then
-    if [ $stats_job == grid2obs ]; then
-        models="gfs"
-    fi
-elif [ $run_job == atmos ]; then
-    if [ $stats_job == grid2grid ]; then
-        models="aigfs cfs cmc cmc_regional dwd ecmwf fnmoc gfs jma metfra ukmet"
-    elif [ $stats_job == grid2obs ]; then
-        models="aigfs cfs cmc ecmwf fnmoc gfs jma ukmet"
+if [ $run_job == atmos ]; then
+    model=$2
+    verif_case=$3
+    if [ $model == all ]; then
+        if [ $verif_case = grid2grid -o $verif_case = grid2obs -o $verif_case = precip ]; then
+            models="gefs aigefs hgefs"
+        fi
     else
-        models="gfs"
+        models=${model}
     fi
+    for run_model in ${models}; do
+        qsub ${drivers_dir}/jevs_stats_aigefs_atmos_${run_model}_${verif_case}.sh
+    done
 fi
-for model in $models; do
-    qsub ${drivers_dir}/jevs_stats_global_det_${model}_${run_job}_${stats_job}.sh
-done

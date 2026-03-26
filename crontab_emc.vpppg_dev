@@ -12,6 +12,36 @@ SHELL=/bin/bash -l
 ##############################################################################
 ##### EVS para testing: /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS
 ##########################
+#### aigefs
+##########################
+45 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh aigefs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_aigefs.out 2>&1
+#################
+#### atmos
+#################
+00 03 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_prep.sh atmos 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_prep_atmos.out 2>&1
+
+30 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos gefs grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_gefs_grid2grid.out 2>&1
+30 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos aigefs grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_aigefs_grid2grid.out 2>&1
+00 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos hgefs grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_hgefs_grid2grid.out 2>&1
+
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos gefs grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_gefs_grid2obs.out 2>&1
+45 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos aigefs grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_aigefs_grid2obs.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos hgefs grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_hgefs_grid2obs.out 2>&1
+
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos gefs precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_gefs_precip.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos aigefs precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_aigefs_precip.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos hgefs precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_hgefs_precip.out 2>&1
+
+00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_grid2grid_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_grid2grid_last90days.out 2>&1
+15 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_grid2obs_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_grid2obs_last90days.out 2>&1
+15 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_grid2obs_separate_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_grid2obs_separate_last90days.out 2>&1
+00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_precip_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_precip_last90days.out 2>&1
+00 17 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_profile1_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_profile1_last90days.out 2>&1
+00 16 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_profile2_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_profile2_last90days.out 2>&1
+
+00 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh aigefs atmos $(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_aigefs_atmos_PDYm2.out 2>&1
+59 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/cleanup/drive_cleanup_ptmp_daily.sh aigefs atmos $(date -d "-3 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_cleanup_ptmp_daily_aigefs_atmos_PDYm3.out 2>&1
+##########################
 #### analyses
 ##########################
 12 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_prep.sh precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_prep_precip.out 2>&1
@@ -152,6 +182,8 @@ SHELL=/bin/bash -l
 45 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_grid2grid.out 2>&1
 15 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_grid2obs.out 2>&1
 15 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos headline 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_headline.out 2>&1
+45 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos ai_grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_ai_grid2grid.out 2>&1
+45 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos ai_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_ai_grid2obs.out 2>&1
 
 30 21 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh global_det atmos $(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_global_det_atmos_PDYm1.out 2>&1
 45 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh global_det headline $(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_global_det_headline_PDYm1.out 2>&1

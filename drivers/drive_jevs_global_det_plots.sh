@@ -22,7 +22,6 @@ drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
 run_job=$1
 plots_job=$2
 if [ $run_job == wave ]; then
-#    qsub ${drivers_dir}/jevs_plots_global_det_${run_job}_${plots_job}_last31days.sh
     qsub ${drivers_dir}/jevs_plots_global_det_${run_job}_${plots_job}_last90days.sh
 elif [ $run_job == atmos ]; then
     if [ $plots_job == headline ]; then
@@ -32,9 +31,12 @@ elif [ $run_job == atmos ]; then
             subplots="precip pres_levs sea_ice snow sst"
         elif [ $plots_job == grid2obs ]; then
             subplots="pres_levs ptype sfc"
+        elif [ $plots_job == ai_grid2grid ]; then
+            subplots="pres_levs ptype"
+        elif [ $plots_job == ai_grid2obs ]; then
+            subplots="pres_levs sfc"
         fi
         for subplot in $subplots; do
-#            qsub ${drivers_dir}/jevs_plots_global_det_${run_job}_${plots_job}_${subplot}_last31days.sh
             qsub ${drivers_dir}/jevs_plots_global_det_${run_job}_${plots_job}_${subplot}_last90days.sh
         done
     fi
