@@ -182,8 +182,8 @@ SHELL=/bin/bash -l
 45 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_grid2grid.out 2>&1
 15 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_grid2obs.out 2>&1
 15 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos headline 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_headline.out 2>&1
-45 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos ai_grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_ai_grid2grid.out 2>&1
-45 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos ai_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_ai_grid2obs.out 2>&1
+15 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos ai_grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_ai_grid2grid.out 2>&1
+15 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_global_det_plots.sh atmos ai_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_global_det_plots_atmos_ai_grid2obs.out 2>&1
 
 30 21 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh global_det atmos $(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_global_det_atmos_PDYm1.out 2>&1
 45 20 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh global_det headline $(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_global_det_headline_PDYm1.out 2>&1
