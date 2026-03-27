@@ -32,7 +32,7 @@ elif [ $run_job == atmos ]; then
         elif [ $plots_job == grid2obs ]; then
             subplots="pres_levs ptype sfc"
         elif [ $plots_job == ai_grid2grid ]; then
-            subplots="pres_levs ptype"
+            subplots="pres_levs precip"
         elif [ $plots_job == ai_grid2obs ]; then
             subplots="pres_levs sfc"
         fi
