@@ -31,6 +31,6 @@ if [ $run_job == atmos ]; then
         models=${model}
     fi
     for run_model in ${models}; do
-        qsub ${drivers_dir}/jevs_stats_aigefs_atmos_${run_model}_${verif_case}.sh
+        qsub ${drivers_dir}/jevs_stats_aigefs_${run_model}_atmos_${verif_case}.sh
     done
 fi
