@@ -46,7 +46,9 @@ elif [ $cur_letter = d ]; then
 fi
 
 # Set STEPS that are run for each COMPONENT
-if [ $COMPONENT = analyses ]; then
+if [ $COMPONENT = aigefs ]; then
+    STEPS="prep stats"
+elif [ $COMPONENT = analyses ]; then
     STEPS="prep stats"
 elif [ $COMPONENT = aqm ]; then
     STEPS="prep stats"
