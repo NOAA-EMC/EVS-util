@@ -37,7 +37,20 @@ elif [ $subcomponent_job == det ]; then
        	if [ $stats_job == severe ]; then
             qsub -v vhr=08 ${drivers_dir}/jevs_stats_cam_${model}_${stats_job}.sh
 	else
-            qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_cam_${model}_${stats_job}.sh
+            vhr_sub=$vhr
+            if [ $stats_job == grid2obs ]; then
+                if [[ "$vhr" == "04" || "$vhr" == "05" ]]; then
+                    vhr_sub=$(( 10#$vhr - 2 ))
+                    vhr_sub=$(printf "%02d" "$vhr_sub")
+                fi
+            fi
+            if [ $stats_job == snowfall ]; then
+                if [ "$vhr" == "13" ]
+                    vhr_sub=$(( 10#$vhr - 1 ))
+                    vhr_sub=$(printf "%02d" "$vhr_sub")
+                fi
+            fi
+            qsub -v vhr=$vhr_sub ${drivers_dir}/jevs_stats_cam_${model}_${stats_job}.sh
 	fi
     done
 fi

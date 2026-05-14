@@ -19,12 +19,14 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-g2g_obs="aviso ghrsst osisaf smap smos"
-for obs in ${g2g_obs}; do
-    qsub ${drivers_dir}/jevs_plots_rtofs_${obs}_grid2grid_last60days.sh
-done
-g2o_obs="argo ndbc"
-for obs in ${g2o_obs}; do
-    qsub ${drivers_dir}/jevs_plots_rtofs_${obs}_grid2obs_last60days.sh
-done
+
+qsub ${drivers_dir}/jevs_plots_rtofs_argo_grid2obs_last60days.sh
+qsub ${drivers_dir}/jevs_plots_rtofs_aviso_grid2grid_last60days.sh
+qsub ${drivers_dir}/jevs_plots_rtofs_ghrsst_grid2grid_last60days.sh
+qsub ${drivers_dir}/jevs_plots_rtofs_osisaf_grid2grid_last60days.sh
+
+sleep 15m
+qsub ${drivers_dir}/jevs_plots_rtofs_smap_grid2grid_last60days.sh
+qsub ${drivers_dir}/jevs_plots_rtofs_smos_grid2grid_last60days.sh
+qsub ${drivers_dir}/jevs_plots_rtofs_ndbc_grid2obs_last60days.sh
 qsub ${drivers_dir}/jevs_plots_rtofs_headline_grid2grid_last90days.sh

@@ -23,17 +23,35 @@ run_job=$1
 stats_job=$2
 if [ $run_job == wave ]; then
     if [ $stats_job == grid2obs ]; then
-        models="gfs"
+        qsub ${drivers_dir}/jevs_stats_global_det_gfs_${run_job}_${stats_job}.sh
     fi
 elif [ $run_job == atmos ]; then
     if [ $stats_job == grid2grid ]; then
-        models="aigfs cfs cmc cmc_regional dwd ecmwf fnmoc gfs jma metfra ukmet"
+        qsub ${drivers_dir}/jevs_stats_global_det_aigfs_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_cfs_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_gfs_${run_job}_${stats_job}.sh
+        sleep 20m
+        qsub ${drivers_dir}/jevs_stats_global_det_metfra_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_ecmwf_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_cmc_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_cmc_regional_${run_job}_${stats_job}.sh
+        sleep 15m
+        qsub ${drivers_dir}/jevs_stats_global_det_ukmet_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_jma_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_fnmoc_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_dwd_${run_job}_${stats_job}.sh
     elif [ $stats_job == grid2obs ]; then
-        models="aigfs cfs cmc ecmwf fnmoc gfs jma ukmet"
-    else
-        models="gfs"
+        qsub ${drivers_dir}/jevs_stats_global_det_aigfs_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_cfs_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_gfs_${run_job}_${stats_job}.sh
+        sleep 20m
+        qsub ${drivers_dir}/jevs_stats_global_det_ecmwf_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_cmc_${run_job}_${stats_job}.sh
+        sleep 15m
+        qsub ${drivers_dir}/jevs_stats_global_det_ukmet_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_jma_${run_job}_${stats_job}.sh
+        qsub ${drivers_dir}/jevs_stats_global_det_fnmoc_${run_job}_${stats_job}.sh
+    elif [ $stats_job == wmo_daily ]; then
+        qsub ${drivers_dir}/jevs_stats_global_det_gfs_${run_job}_${stats_job}.sh
     fi
 fi
-for model in $models; do
-    qsub ${drivers_dir}/jevs_stats_global_det_${model}_${run_job}_${stats_job}.sh
-done

@@ -18,7 +18,7 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 
 module reset
 
-drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-for model in cfs gefs obs; do
-    qsub ${drivers_dir}/jevs_prep_subseasonal_${model}.sh
-done
+qsub ${drivers_dir}/jevs_prep_subseasonal_gefs.sh
+sleep 30m
+qsub ${drivers_dir}/jevs_prep_subseasonal_obs.sh
+qsub ${drivers_dir}/jevs_prep_subseasonal_cfs.sh
