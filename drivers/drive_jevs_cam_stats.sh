@@ -45,7 +45,7 @@ elif [ $subcomponent_job == det ]; then
                 fi
             fi
             if [ $stats_job == snowfall ]; then
-                if [ "$vhr" == "13" ]
+                if [ "$vhr" == "13" ]; then
                     vhr_sub=$(( 10#$vhr - 1 ))
                     vhr_sub=$(printf "%02d" "$vhr_sub")
                 fi
