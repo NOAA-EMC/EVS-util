@@ -24,4 +24,5 @@ qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_rtma_precip.sh
 qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_urma_grid2obs.sh
 qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_urma_precip.sh
 qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_rtma_ru_grid2obs.sh
+sleep 5m
 qsub -v vhr=$vhr ${drivers_dir}/jevs_stats_analyses_ccpa_precip.sh
