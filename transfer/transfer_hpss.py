@@ -6,8 +6,7 @@ import subprocess
 
 ### Set up paths
 online_evs_dir = "/lfs/h2/emc/vpppg/noscrub/emc.vpppg/evs/v2.0/stats"
-hpss_dir = "/NCEPDEV/emc-global/5year/Mallory.Row"
-#hpss_dir = "/NCEPDEV/emc-global/5year/emc.vpppg/evs_v2.0_parallel/stats"
+hpss_dir = "/NCEPDEV/emc-global/5year/emc.vpppg/evs_v2.0_parallel/stats"
 
 ### Read runtime agruments
 parser = argparse.ArgumentParser(
