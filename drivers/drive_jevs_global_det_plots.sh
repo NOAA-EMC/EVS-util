@@ -32,11 +32,21 @@ elif [ $run_job == atmos ]; then
         elif [ $plots_job == grid2obs ]; then
             subplots="pres_levs ptype sfc"
         elif [ $plots_job == ai_grid2grid ]; then
-            subplots="pres_levs precip"
+            subplots="precip pres_levs"
         elif [ $plots_job == ai_grid2obs ]; then
             subplots="pres_levs sfc"
         fi
         for subplot in $subplots; do
+            if [ $plots_job == ai_grid2obs ]; then
+               if [ $subplot == sfc ]; then
+                   sleep 30m
+               fi
+            fi
+            if [ $plots_job == ai_grid2grid ]; then
+               if [ $subplot == pres_levs ]; then
+                   sleep 15m
+               fi
+            fi
             qsub ${drivers_dir}/jevs_plots_global_det_${run_job}_${plots_job}_${subplot}_last90days.sh
         done
     fi
