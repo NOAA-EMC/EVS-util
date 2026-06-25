@@ -23,7 +23,6 @@ rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/cam/*${VDATE_RM}*
 rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/global_det/*${VDATE_RM}*
 rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/global_ens/*${VDATE_RM}*
 rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/glwu/*${VDATE_RM}*
-rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/mesoscale/*${VDATE_RM}*
 rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/nwps/*${VDATE_RM}*
 rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/rtofs/*${VDATE_RM}*
 rm -f -r /lfs/h2/emc/ptmp/emc.vpppg/evs/v2.0/plots/subseasonal/*${VDATE_RM}*
