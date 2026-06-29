@@ -11,7 +11,7 @@ STEP=plots
 COMPONENT=cam
 
 now=$(date -u +%Y%m%d%H)
-vhr=$(echo $now | cut -c 9-10)
+vhr=${vhr:-$(echo $now | cut -c 9-10)}
 
 mkdir -p /lfs/h2/emc/ptmp/${USER}/output
 cd /lfs/h2/emc/ptmp/${USER}/output
@@ -19,24 +19,6 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-subcomponent_job=$1
-plots_job=$2
-if [ $subcomponent_job == firewx ]; then
-    qsub ${drivers_dir}/jevs_plots_cam_nam_firewxnest_${plots_job}_last31days.sh
-elif [ $subcomponent_job == ens ]; then
-    qsub ${drivers_dir}/jevs_plots_cam_href_${plots_job}.sh
-elif [ $subcomponent_job == det ]; then
-    if [ $plots_job == grid2obs ]; then
-        ##qsub -v vhr=$vhr ${drivers_dir}/jevs_plots_cam_${plots_job}_last31days.sh
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_plots_cam_${plots_job}_last90days.sh
-    elif [ $plots_job == precip ]; then
-        ##qsub -v vhr=$vhr ${drivers_dir}/jevs_plots_cam_${plots_job}_last31days.sh
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_plots_cam_${plots_job}_last90days.sh
-    elif [ $plots_job == snowfall ]; then
-        ##qsub -v vhr=$vhr ${drivers_dir}/jevs_plots_cam_${plots_job}_last31days.sh
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_plots_cam_${plots_job}_last90days.sh
-    else
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_plots_cam_${plots_job}.sh
-    fi
-fi
+plots_job=$1
 
+qsub -v vhr=$vhr ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${plots_job}.sh
