@@ -59,8 +59,8 @@ for log in PDYm1_log_list:
         if grep_keyword == 'ERROR':
             ps = subprocess.Popen(
                 'grep -r "'+grep_keyword+'" '+log
-                +' | grep -v "MET_OBS_ERROR_TABLE"'
-                +' | grep -v "METPLUS_OBS_ERROR_FLAG"',
+                +' | grep -v "ERROR_TABLE"'
+                +' | grep -v "ERROR_FLAG"',
                 shell=True, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT, encoding='UTF-8'
             )
@@ -69,6 +69,22 @@ for log in PDYm1_log_list:
                 'grep -r "'+grep_keyword+'" '+log
                 +' | grep -v "Error_Path"'
                 +' | grep -v "nid"',
+                shell=True, stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT, encoding='UTF-8'
+            )
+        elif grep_keyword == 'error':
+            ps = subprocess.Popen(
+                'grep -r "'+grep_keyword+'" '+log
+                +' | grep -v "resp_cqe"'
+                +' | grep -v " -32005"'
+                +' | grep -v "Hardware"',
+                shell=True, stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT, encoding='UTF-8'
+            )
+        elif grep_keyword == 'fail':
+            ps = subprocess.Popen(
+                'grep -r "'+grep_keyword+'" '+log
+                +' | grep -v "Excessive pgmigrate_"',
                 shell=True, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT, encoding='UTF-8'
             )
