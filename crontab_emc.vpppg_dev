@@ -224,8 +224,8 @@ SHELL=/bin/bash -l
 00 00,06 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rap_snowfall 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rap_snowfall.out 2>&1
 20 12 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rap_snowfall 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rap_snowfall.out 2>&1
 15 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rap_snowfall 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rap_snowfall.out 2>&1
-30 02,03,06,12,15,18,21 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_grid2obs.out 2>&1
-30 02,03,06,12,15,18,21 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfsmem_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfsmem_grid2obs.out 2>&1
+30 02,03,06,09,12,15,18,21 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_grid2obs.out 2>&1
+30 02,03,06,09,12,15,18,21 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfsmem_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfsmem_grid2obs.out 2>&1
 00 19,20,21,22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_precip.out 2>&1
 00 19,20,21,22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfsmem_precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfsmem_precip.out 2>&1
 40 * * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_radar 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_radar.out 2>&1
