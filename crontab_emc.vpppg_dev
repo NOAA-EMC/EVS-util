@@ -259,6 +259,7 @@ SHELL=/bin/bash -l
 30 12 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_plots.sh refs_precip_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_plots_refs_precip_last90days.out 2>&1
 30 12 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_plots.sh refs_precip_spatial 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_plots_refs_precip_spatial.out 2>&1
 30 12 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_plots.sh refs_spcoutlook_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_plots_refs_spcoutlook_last90days.out 2>&1
+30 12 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_plots.sh refs_snowfall_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_plots_refs_snowfall_last90days.out 2>&1
 30 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_plots.sh refs_grid2obs_cape_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_plots_refs_grid2obs_cape_last90days.out 2>&1
 
 ##########################
