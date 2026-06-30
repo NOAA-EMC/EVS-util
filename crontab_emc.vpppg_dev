@@ -113,7 +113,7 @@ SHELL=/bin/bash -l
 #### chem - det
 #################
 05 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_prep.sh rrfs_chem_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_prep_rrfs_chem_grid2obs.out 2>&1
-10 00 * * * vhr=00 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
+15 00 * * * vhr=00 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
 20 00 * * * vhr=01 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
 35 00 * * * vhr=02 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
 50 00 * * * vhr=03 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
@@ -137,7 +137,7 @@ SHELL=/bin/bash -l
 50 18 * * * vhr=21 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
 05 19 * * * vhr=22 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
 20 19 * * * vhr=23 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_aeronet_aod 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_aeronet_aod.out 2>&1
-10 00 * * * vhr=00 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_airnow_pm10 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_airnow_pm10.out 2>&1
+15 00 * * * vhr=00 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_airnow_pm10 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_airnow_pm10.out 2>&1
 25 00 * * * vhr=01 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_airnow_pm10 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_airnow_pm10.out 2>&1
 40 00 * * * vhr=02 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_airnow_pm10 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_airnow_pm10.out 2>&1
 55 00 * * * vhr=03 /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_cam_stats.sh rrfs_chem_grid2obs_airnow_pm10 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_cam_stats_rrfs_chem_grid2obs_airnow_pm10.out 2>&1
