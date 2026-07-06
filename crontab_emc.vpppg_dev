@@ -14,43 +14,67 @@ SHELL=/bin/bash -l
 ##########################
 #### aigefs
 ##########################
+COMPONENT=aigefs
+## prep
+STEP=prep
+00 03 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=atmos 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_prep_aigefs_atmos.out 2>&1
+## stats
+STEP=stats
+30 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=aigefs_atmos_grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_aigefs_atmos_grid2grid.out 2>&1
+45 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=aigefs_atmos_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_aigefs_atmos_grid2obs.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=aigefs_atmos_precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_aigefs_atmos_precip.out 2>&1
+30 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_atmos_grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_gefs_atmos_grid2grid.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_atmos_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_gefs_atmos_grid2obs.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_atmos_precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_gefs_atmos_precip.out 2>&1
+00 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hgefs_atmos_grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_hgefs_atmos_grid2grid.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hgefs_atmos_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_hgefs_atmos_grid2obs.out 2>&1
+00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hgefs_atmos_precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_aigefs_hgefs_atmos_precip.out 2>&1
+## plots
+STEP=plots
+00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=atmos_aigefs_grid2grid_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_aigefs_atmos_aigefs_grid2grid_last90days.out 2>&1
+00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=atmos_aigefs_precip_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_aigefs_atmos_aigefs_precip_last90days.out 2>&1
+15 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=atmos_aigefs_grid2obs_separate_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_aigefs_atmos_aigefs_grid2obs_separate_last90days.out 2>&1
+15 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=atmos_aigefs_grid2obs_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_aigefs_atmos_aigefs_grid2obs_last90days.out 2>&1
+00 16 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=atmos_aigefs_profile1_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_aigefs_atmos_aigefs_profile1_last90days.out 2>&1
+00 17 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=atmos_aigefs_profile2_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_aigefs_atmos_aigefs_profile2_last90days.out 2>&1
+## misc
 45 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh aigefs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_aigefs.out 2>&1
-#################
-#### atmos
-#################
-00 03 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_prep.sh atmos 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_prep_atmos.out 2>&1
-
-30 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos gefs grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_gefs_grid2grid.out 2>&1
-30 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos aigefs grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_aigefs_grid2grid.out 2>&1
-00 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos hgefs grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_hgefs_grid2grid.out 2>&1
-
-00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos gefs grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_gefs_grid2obs.out 2>&1
-45 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos aigefs grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_aigefs_grid2obs.out 2>&1
-00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos hgefs grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_hgefs_grid2obs.out 2>&1
-
-00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos gefs precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_gefs_precip.out 2>&1
-00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos aigefs precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_aigefs_precip.out 2>&1
-00 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_stats.sh atmos hgefs precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_stats_atmos_hgefs_precip.out 2>&1
-
-00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_grid2grid_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_grid2grid_last90days.out 2>&1
-15 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_grid2obs_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_grid2obs_last90days.out 2>&1
-15 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_grid2obs_separate_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_grid2obs_separate_last90days.out 2>&1
-00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_precip_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_precip_last90days.out 2>&1
-00 17 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_profile1_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_profile1_last90days.out 2>&1
-00 16 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_aigefs_plots.sh atmos aigefs_profile2_last90days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_aigefs_plots_atmos_aigefs_profile2_last90days.out 2>&1
-
 00 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh aigefs atmos $(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_aigefs_atmos_PDYm2.out 2>&1
 59 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/cleanup/drive_cleanup_ptmp_daily.sh aigefs atmos $(date -d "-3 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_cleanup_ptmp_daily_aigefs_atmos_PDYm3.out 2>&1
 ##########################
 #### analyses
 ##########################
-00 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_prep.sh precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_prep_precip.out 2>&1
-15 12,13,14,15,16,17,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_stats.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_stats.out 2>&1
-00 00,01,02,03,04,05,06,07,08,09,10,11,20,21,22,23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_stats.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_stats.out 2>&1
-45 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_stats.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_stats.out 2>&1
-15 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_stats.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_stats.out 2>&1
-30 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_analyses_plots.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_jevs_analyses_plots.out 2>&1
-
+COMPONENT=analyses
+## prep
+STEP=prep
+00 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_prep_analyses_precip.out 2>&1
+## stats
+STEP=stats
+00 00-11,20-23 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_grid2obs.out 2>&1
+15 12-18 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_grid2obs.out 2>&1
+45 19 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_grid2obs.out 2>&1
+00 00-11,20-23 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_precip.out 2>&1
+15 12-18 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_precip.out 2>&1
+45 19 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_precip.out 2>&1
+00 00-11,20-23 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=urma_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_urma_grid2obs.out 2>&1
+15 12-18 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=urma_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_urma_grid2obs.out 2>&1
+45 19 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=urma_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_urma_grid2obs.out 2>&1
+00 00-11,20-23 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=urma_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_urma_precip.out 2>&1
+15 12-18 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=urma_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_urma_precip.out 2>&1
+45 19 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=urma_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_urma_precip.out 2>&1
+00 00-11,20-23 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_ru_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_ru_grid2obs.out 2>&1
+15 12-18 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_ru_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_ru_grid2obs.out 2>&1
+45 19 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_ru_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_ru_grid2obs.out 2>&1
+00 00-11,20-23 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_ru_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_ru_precip.out 2>&1
+15 12-18 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_ru_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_ru_precip.out 2>&1
+45 19 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_ru_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_ru_precip.out 2>&1
+05 00-11,20-23 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=ccpa_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_ccpa_precip.out 2>&1
+20 12-18 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=ccpa_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_ccpa_precip.out 2>&1
+50 19 * * */lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=ccpa_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_ccpa_precip.out 2>&1
+## plots
+STEP=plots
+30 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=grid2obs_last31days 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_analyses_grid2obs_last31days.out 2>&1
+## misc
 30 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh analyses 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_analyses.out 2>&1
 30 00 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs_devonly.sh analyses 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_devonly_analyses.out 2>&1
 45 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh analyses atmos $(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_analyses_atmos_PDYm2.out 2>&1
