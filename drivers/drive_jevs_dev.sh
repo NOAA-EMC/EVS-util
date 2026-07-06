@@ -58,14 +58,14 @@ cd /lfs/h2/emc/ptmp/${USER}/output
 module reset
 
 drivers_dir=${HOMEevs}/dev/drivers/scripts/${STEP}/${COMPONENT}
-if [[ "$run_job" == *"rrfsmem"* ]]; then
+if [[ "$JOB" == *"rrfsmem"* ]]; then
     for mem in {1..5}; do
-        qsub -v vhr=$vhr,mem=$mem ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${run_job}.sh
+        qsub -v vhr=$vhr,mem=$mem ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${JOB}.sh
     done
 else
-    if [ "$vhr" == "null" ]; then
-        qsub ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${run_job}.sh
+    if [ "$VHR" == "null" ]; then
+        qsub ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${JOB}.sh
     else
-        qsub -v vhr=$vhr ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${run_job}.sh
+        qsub -v vhr=$VHR ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${JOB}.sh
     fi
 fi
