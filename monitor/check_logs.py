@@ -75,16 +75,32 @@ for log in PDYm1_log_list:
         elif grep_keyword == 'error':
             ps = subprocess.Popen(
                 'grep -r "'+grep_keyword+'" '+log
-                +' | grep -v "resp_cqe"'
-                +' | grep -v " -32005"'
-                +' | grep -v "Hardware"',
+                +' | grep -v "SUSEConnect"'
+                +' | grep -v "nid"',
                 shell=True, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT, encoding='UTF-8'
             )
         elif grep_keyword == 'fail':
             ps = subprocess.Popen(
                 'grep -r "'+grep_keyword+'" '+log
-                +' | grep -v "Excessive pgmigrate_"',
+                +' | grep -v "nid"',
+                shell=True, stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT, encoding='UTF-8'
+            )
+        elif grep_keyword == 'FAIL':
+            ps = subprocess.Popen(
+                'grep -r "'+grep_keyword+'" '+log
+                +' | grep -v "suseconnect"'
+                +' | grep -v "nid"',
+                shell=True, stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT, encoding='UTF-8'
+            )
+        elif grep_keyword == 'Fail':
+            ps = subprocess.Popen(
+                'grep -r "'+grep_keyword+'" '+log
+                +' | grep -v "SUSEConnect"'
+                +' | grep -v "suseconnect"'
+                +' | grep -v "nid"',
                 shell=True, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT, encoding='UTF-8'
             )
