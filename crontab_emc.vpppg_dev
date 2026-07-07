@@ -47,7 +47,7 @@ STEP=plots
 COMPONENT=analyses
 ## prep
 STEP=prep
-00 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=precip 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_prep_analyses_precip.out 2>&1
+00 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_prep_analyses_precip.out 2>&1
 ## stats
 STEP=stats
 00 00-11,20-23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=rtma_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_analyses_rtma_grid2obs.out 2>&1
