@@ -62,7 +62,7 @@ if [ "$JOB" == "null" ]; then
     fi
 elif [[ "$JOB" == *"rrfsmem"* ]]; then
     for mem in {1..5}; do
-        qsub -v vhr=$vhr,mem=$mem ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${JOB}.sh
+        qsub -v vhr=$VHR,mem=$mem ${drivers_dir}/jevs_${STEP}_${COMPONENT}_${JOB}.sh
     done
 else
     if [ "$VHR" == "null" ]; then
