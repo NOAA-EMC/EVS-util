@@ -59,6 +59,7 @@ for log in PDYm1_log_list:
         if grep_keyword == 'ERROR':
             ps = subprocess.Popen(
                 'grep -r "'+grep_keyword+'" '+log
+                +' | grep -v "_OBS_"'
                 +' | grep -v "ERROR_TABLE"'
                 +' | grep -v "ERROR_FLAG"',
                 shell=True, stdout=subprocess.PIPE,
@@ -83,6 +84,7 @@ for log in PDYm1_log_list:
         elif grep_keyword == 'fail':
             ps = subprocess.Popen(
                 'grep -r "'+grep_keyword+'" '+log
+                +' | grep -v "pgmigrate_"'
                 +' | grep -v "nid"',
                 shell=True, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT, encoding='UTF-8'
