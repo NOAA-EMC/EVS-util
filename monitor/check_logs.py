@@ -68,6 +68,7 @@ for log in PDYm1_log_list:
         elif grep_keyword == 'Error':
             ps = subprocess.Popen(
                 'grep -r "'+grep_keyword+'" '+log
+                +' | grep -v "Hardware"'
                 +' | grep -v "Error_Path"'
                 +' | grep -v "nid"',
                 shell=True, stdout=subprocess.PIPE,
