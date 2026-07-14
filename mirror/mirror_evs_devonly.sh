@@ -12,7 +12,29 @@ set -x
 module load rsync
 
 # Get EVS COMPONENT
-COMPONENT=${1:-${COMPONENT:-"component"}}
+COMPONENT=${COMPONENT:-"component"}
+
+# Parse command-line arguments (Overrides environment variables)
+for arg in "$@"; do
+    key="${arg%%=*}"
+    value="${arg#*=}"
+
+    case "$key" in
+        component)
+            COMPONENT="$value"
+            ;;
+        *)
+            echo "Warning: Unknown argument '$key'"
+            exit 1
+            ;;
+    esac
+done
+
+# Make sure we got all our passed agrument
+if [ ${COMPONENT} = "component" ]; then
+    echo "ERROR: Did not pass COMPONENT"
+    exit 1
+fi
 
 # EVS Output Info
 user_para=/lfs/h2/emc/vpppg/noscrub/${USER}/evs_devonly/v2.0

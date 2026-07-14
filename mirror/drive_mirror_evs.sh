@@ -10,13 +10,28 @@ set -x
 HOMEevs_util=/lfs/h2/emc/vpppg/noscrub/${USER}/EVS-util
 LOGSevs_util=/lfs/h2/emc/ptmp/${USER}/evs_util_logs
 
+mkdir -p ${LOGSevs_util}
+
 now=$(date '+%Y%m%d%H%M%S')
 
 # Get EVS COMPONENT
-COMPONENT=${1:-"component"}
+COMPONENT=${COMPONENT:-"component"}
 
-# Make and work in the log directory
-mkdir -p ${LOGSevs_util}
+# Parse command-line arguments (Overrides environment variables)
+for arg in "$@"; do
+    key="${arg%%=*}"
+    value="${arg#*=}"
+
+    case "$key" in
+        component)
+            COMPONENT="$value"
+            ;;
+        *)
+            echo "Warning: Unknown argument '$key'"
+            exit 1
+            ;;
+    esac
+done
 
 # Make sure we got all our passed agrument
 if [ ${COMPONENT} = "component" ]; then
