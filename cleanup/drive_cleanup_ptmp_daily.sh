@@ -1,8 +1,8 @@
 #!/bin/bash
 #################################################
 # Author: Mallory Row
-# Purpose: This drives transfer_emcrzdm.sh submitting
-#          job to the dev_transfer queue
+# Purpose: This drives cleanup_ptmp_daily.sh submitting
+#          job to the dev queue
 #################################################
 
 set -x
@@ -10,15 +10,36 @@ set -x
 HOMEevs_util=/lfs/h2/emc/vpppg/noscrub/${USER}/EVS-util
 LOGSevs_util=/lfs/h2/emc/ptmp/${USER}/evs_util_logs
 
+mkdir -p ${LOGSevs_util}
+
 now=$(date '+%Y%m%d%H%M%S')
 
 # Get EVS COMPONENT
-COMPONENT=${1:-"component"}
-RUN=${2:-"run"}
-VDATE=${3:-"vdate"}
+COMPONENT=${COMPONENT:-"component"}
+RUN=${RUN:-"run"}
+VDATE=${VDATE:-"vdate"}
 
-# Make and work in the log directory
-mkdir -p ${LOGSevs_util}
+# Parse command-line arguments (Overrides environment variables)
+for arg in "$@"; do
+    key="${arg%%=*}"
+    value="${arg#*=}"
+
+    case "$key" in
+        component)
+            COMPONENT="$value"
+            ;;
+        run)
+            RUN="$value"
+            ;;
+        vdate)
+            VDATE="$value"
+            ;;
+        *)
+            echo "Warning: Unknown argument '$key'"
+            exit 1
+            ;;
+    esac
+done
 
 # Make sure we got all our passed agrument
 if [ ${COMPONENT} = "component" ]; then
