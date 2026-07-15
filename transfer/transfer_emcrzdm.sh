@@ -11,13 +11,49 @@ set -x
 module load rsync
 module load prod_util
 
-# Get EVS COMPONENT
-COMPONENT=${1:-${COMPONENT:-"component"}}
-RUN=${2:-${RUN:-"run"}}
-VDATE=${3:-${VDATE:-"vdate"}}
-
 # EVS Output Info
 user_para=/lfs/h2/emc/ptmp/${USER}/evs/v2.0
+
+# Get EVS COMPONENT
+COMPONENT=${COMPONENT:-"component"}
+RUN=${RUN:-"run"}
+VDATE=${VDATE:-"vdate"}
+
+# Parse command-line arguments (Overrides environment variables)
+for arg in "$@"; do
+    key="${arg%%=*}"
+    value="${arg#*=}"
+
+    case "$key" in
+        component)
+            COMPONENT="$value"
+            ;;
+        run)
+            RUN="$value"
+            ;;
+        vdate)
+            VDATE="$value"
+            ;;
+        *)
+            echo "Warning: Unknown argument '$key'"
+            exit 1
+            ;;
+    esac
+done
+
+# Make sure we got all our passed agrument
+if [ ${COMPONENT} = "component" ]; then
+    echo "ERROR: Did not pass COMPONENT"
+    exit 1
+fi
+if [ ${RUN} = "run" ]; then
+    echo "ERROR: Did not pass RUN"
+    exit 1
+fi
+if [ ${VDATE} = "vdate" ]; then
+    echo "ERROR: Did not pass VDATE"
+    exit 1
+fi
 
 # RZDM Info
 webhost_id=${webhost_id:-$USER}
