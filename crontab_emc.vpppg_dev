@@ -288,13 +288,13 @@ STEP=plots
 00 15 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=radar_nbrcnt_last90days vhr=18 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_radar_nbrcnt_last90days.out 2>&1
 30 22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=headline vhr=21 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_radar_headline.out 2>&1
 30 12 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_grid2obs_ecnt_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_grid2obs_ecnt_last90days.out 2>&1
-00 13 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_grid2obs_ctc_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_grid2obs_ctc_last90days.out 2>&1
-15 13 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_profile_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_profile_last90days.out 2>&1
-30 13 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_precip_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_precip_last90days.out 2>&1
-45 13 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_precip_spatial vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_precip_spatial.out 2>&1
-00 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_spcoutlook_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_spcoutlook_last90days.out 2>&1
-15 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_snowfall_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_snowfall_last90days.out 2>&1
-30 14 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_grid2obs_cape_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_grid2obs_cape_last90days.out 2>&1
+00 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_grid2obs_cape_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_grid2obs_cape_last90days.out 2>&1
+20 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_grid2obs_ctc_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_grid2obs_ctc_last90days.out 2>&1
+30 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_precip_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_precip_last90days.out 2>&1
+40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_profile_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_profile_last90days.out 2>&1
+40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_precip_spatial vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_precip_spatial.out 2>&1
+40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_spcoutlook_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_spcoutlook_last90days.out 2>&1
+40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_snowfall_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_snowfall_last90days.out 2>&1
 ## misc
 30 22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_cam.out 2>&1
 30 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh run=headline vdate=$(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_cam_headline_PDYm1.out 2>&1
