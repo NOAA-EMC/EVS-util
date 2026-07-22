@@ -39,10 +39,8 @@ for evs_dir in [evs_all_dir, evs_devonly_dir]:
     prep_components = [x.name for x in prep_dir.iterdir() if x.is_dir()]
     print(f"\n--- Cleaning up prep: {prep_dir}")
     for component in prep_components:
-        if component in ["analyses", "glwu", "nwps", "rtofs"]:
+        if component in ["analyses", "aqm", "cam", "glwu", "nwps", "rtofs"]:
             keep_ndays_prep = 15
-        elif component in ["aqm", "cam"]:
-            keep_ndays_prep = 20
         elif component in ["aigefs", "global_chem", "global_det", "global_ens"]:
             keep_ndays_prep = 25
         elif component in ["subseasonal"]:
