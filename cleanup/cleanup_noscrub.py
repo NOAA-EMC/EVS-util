@@ -57,7 +57,7 @@ for evs_dir in [evs_all_dir, evs_devonly_dir]:
             )
 
 ### Clean up stats
-RUN_list = ["atmos", "headline", "ocean", "wave"]
+RUN_list = ["atmos", "chem", "headline", "ocean", "wave"]
 for evs_dir in [evs_all_dir, evs_devonly_dir]:
     stats_dir = evs_dir / "stats"
     stats_components = [x.name for x in stats_dir.iterdir() if x.is_dir()]
