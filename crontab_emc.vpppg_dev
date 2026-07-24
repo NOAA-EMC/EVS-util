@@ -407,7 +407,7 @@ STEP=prep
 00 06 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=headline 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_prep_global_ens_headline.out 2>&1
 ## stats
 STEP=stats
-40 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_wave_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_global_ens_gefs_wave_grid2obs.out 2>&1
+00 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_wave_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_global_ens_gefs_wave_grid2obs.out 2>&1
 30 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_atmos_grid2grid 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_global_ens_gefs_atmos_grid2grid.out 2>&1
 45 09 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_atmos_grid2obs 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_global_ens_gefs_atmos_grid2obs.out 2>&1
 20 10 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=gefs_atmos_sst 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_global_ens_gefs_atmos_sst.out 2>&1
