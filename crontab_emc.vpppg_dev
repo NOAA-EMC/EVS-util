@@ -249,7 +249,7 @@ STEP=stats
 30 05 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_grid2obs vhr=03 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_grid2obs.out 2>&1
 30 06,09,12,15,18,21 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_grid2obs vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_grid2obs.out 2>&1
 30 19 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_precip.out 2>&1
-30 20-22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_precip.out 2>&1
+00 20-22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_precip vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_precip.out 2>&1
 40 * * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_radar vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_radar.out 2>&1
 00 08 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_severe vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_severe.out 2>&1
 00 00,06,12,18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=hrrr_snowfall vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_stats_cam_hrrr_snowfall.out 2>&1
