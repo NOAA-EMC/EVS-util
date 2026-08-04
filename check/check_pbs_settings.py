@@ -52,6 +52,57 @@ def get_memory(filepath):
 
     return None
 
+def get_select(filepath):
+    """
+    Reads a file and searches for a PBS select directive.
+    Returns the select string if found, otherwise returns None.
+    """
+    # Pattern looks for lines starting with #PBS, containing -l, and extracts the select value
+    walltime_pattern = re.compile(r'^#PBS\s+-l\s+.*select=([0-9:]+)')
+
+    try:
+        with open(filepath, 'r') as f:
+            for line in f:
+                # Quick check to only process PBS directives
+                if line.startswith('#PBS'):
+                    match = walltime_pattern.search(line)
+                    if match:
+                        return match.group(1)
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error reading '{filepath}': {e}")
+        sys.exit(1)
+
+    return None
+
+def get_ncpus(filepath):
+    """
+    Reads a file and searches for a PBS ncpus directive.
+    Returns the ncpus string if found, otherwise returns None.
+    """
+    # Pattern looks for lines starting with #PBS, containing -l, and extracts the ncpus value
+    walltime_pattern = re.compile(r'^#PBS\s+-l\s+.*ncpus=([0-9:]+)')
+
+    try:
+        with open(filepath, 'r') as f:
+            for line in f:
+                # Quick check to only process PBS directives
+                if line.startswith('#PBS'):
+                    match = walltime_pattern.search(line)
+                    if match:
+                        return match.group(1)
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error reading '{filepath}': {e}")
+        sys.exit(1)
+
+    return None
+
+
 def main():
 
     HOMEevs = f'/lfs/h2/emc/vpppg/noscrub/{os.environ["USER"]}/EVS'
@@ -93,6 +144,30 @@ def main():
                     print(f"{ecf_driver_filepath}: {m1}")
                     print(f"{dev_driver_filepath}: {m2}")
                     print("")
+                # Extract select
+                s1 = get_select(ecf_driver_filepath)
+                s2 = get_select(dev_driver_filepath)
+                if s1 is None or s2 is None:
+                    print("Result: Cannot compare. One or both files are missing a select setting.")
+                    sys.exit(1)
+                if m1 != m2:
+                    print("MISMATCH SELECT. The files have different select settings.")
+                    print(f"{ecf_driver_filepath}: {s1}")
+                    print(f"{dev_driver_filepath}: {s2}")
+                    print("")
+                # Extract ncpus
+                n1 = get_ncpus(ecf_driver_filepath)
+                n2 = get_ncpus(dev_driver_filepath)
+                if n1 is None or n2 is None:
+                    print("Result: Cannot compare. One or both files are missing a ncpus setting.")
+                    sys.exit(1)
+                if n1 != n2:
+                    print("MISMATCH NCPUS. The files have different ncpus settings.")
+                    print(f"{ecf_driver_filepath}: {n1}")
+                    print(f"{dev_driver_filepath}: {n2}")
+                    print("")
+
+
 
                  
 
