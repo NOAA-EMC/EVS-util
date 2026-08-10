@@ -78,6 +78,7 @@ for log in PDYm1_log_list:
             ps = subprocess.Popen(
                 'grep -r "'+grep_keyword+'" '+log
                 +' | grep -v "SUSEConnect"'
+                +' | grep -v "resp_cqe"'
                 +' | grep -v "nid"',
                 shell=True, stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT, encoding='UTF-8'
