@@ -15,4 +15,6 @@ SHELL=/bin/bash -l
 40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/cron_send_eval_dev.sh 1> /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/log_cron_send_eval_dev_1140.out 2>&1
 40 17 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/cron_send_eval_dev.sh 1> /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/log_cron_send_eval_dev_1740.out 2>&1
 40 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/cron_get_from_prod.sh 1> /lfs/h2/emc/vpppg/noscrub/emc.vpppg/verification/global/eval/model_data/gfs/prod/log_cron_get_from_prod_2330.out 2>&1
+#### For Gwen/EVS global_ens
+50 23 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/get_gefs_evs_stats.rt.sh 1> /u/emc.vpppg/cron_jobs/logs/log_get_gefs_evs_stats.rt.out 2>&1
 #############################################################################
