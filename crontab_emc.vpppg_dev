@@ -296,7 +296,7 @@ STEP=plots
 40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_spcoutlook_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_spcoutlook_last90days.out 2>&1
 40 11 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/drivers/drive_jevs_dev.sh job=refs_snowfall_last90days vhr=$(date +\%H) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_plots_cam_refs_snowfall_last90days.out 2>&1
 ## misc
-30 11,22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_cam.out 2>&1
+30 08,15,22 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/mirror/drive_mirror_evs.sh 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_mirror_evs_cam.out 2>&1
 30 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh run=headline vdate=$(date -d "-1 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_cam_headline_PDYm1.out 2>&1
 45 23 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/cleanup/drive_cleanup_ptmp_daily.sh run=headline vdate=$(date -d "-2 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_cleanup_ptmp_daily_cam_headline_PDYm2.out 2>&1
 30 18 * * * /lfs/h2/emc/vpppg/noscrub/emc.vpppg/EVS-util/transfer/drive_transfer_emcrzdm.sh run=atmos vdate=$(date -d "-7 days" +\%Y\%m\%d) 1>/u/emc.vpppg/cron_jobs/logs/evs-util/drive_transfer_emcrzdm_cam_atmos_PDYm7.out 2>&1
