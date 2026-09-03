@@ -3,9 +3,7 @@ SHELL=/bin/bash -l
 ##############################################################################
 # Development machine cronjobs, contact Mallory Row (mallory.row@noaa.gov)
 20 07 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_emc_verif_global_daily_stats.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_emc_verif_global_daily_stats.out 2>&1
-#10 12 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_emc_verif_global_daily_plots.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_emc_verif_global_daily_plots.out 2>&1
 20 07 02 * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_monthly_processes.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_monthly_processes.out 2>&1
-#20 07 02 * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_long_term_stats_plots.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_long_term_stats_plots.out 2>&1
 00 11 * * * /u/emc.vpppg/cron_jobs/scripts/verification/global/run_transfer_data_across_machines.sh 1> /u/emc.vpppg/cron_jobs/logs/log_run_transfer_data_across_machines.out 2>&1
 ##############################################################################
 
