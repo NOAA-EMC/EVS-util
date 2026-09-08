@@ -1,0 +1,78 @@
+#!/bin/bash
+#################################################
+# Author: Mallory Row
+# Purpose: This transfer final EVS plot tar files
+#          to emcrzdm
+#################################################
+
+set -x
+
+# Module Loads
+module load rsync
+module load prod_util
+
+# EVS Output Info
+nco_para=/lfs/h1/ops/para/com/evs/v2.0
+
+# Get EVS COMPONENT
+COMPONENT=${COMPONENT:-"component"}
+RUN=${RUN:-"run"}
+VDATE=${VDATE:-"vdate"}
+
+# Parse command-line arguments (Overrides environment variables)
+for arg in "$@"; do
+    key="${arg%%=*}"
+    value="${arg#*=}"
+
+    case "$key" in
+        component)
+            COMPONENT="$value"
+            ;;
+        run)
+            RUN="$value"
+            ;;
+        vdate)
+            VDATE="$value"
+            ;;
+        *)
+            echo "Warning: Unknown argument '$key'"
+            exit 1
+            ;;
+    esac
+done
+
+# Make sure we got all our passed agrument
+if [ ${COMPONENT} = "component" ]; then
+    echo "ERROR: Did not pass COMPONENT"
+    exit 1
+fi
+if [ ${RUN} = "run" ]; then
+    echo "ERROR: Did not pass RUN"
+    exit 1
+fi
+if [ ${VDATE} = "vdate" ]; then
+    echo "ERROR: Did not pass VDATE"
+    exit 1
+fi
+
+# RZDM Info
+webhost_id=${webhost_id:-$USER}
+webhost=emcrzdm.ncep.noaa.gov
+emcrzdm_dir=/home/people/emc/www/htdocs/users/verification/${webhost_id}/para_tar_files
+
+#### Transfer
+COMPONENT_RUN_VDATE_web_dir=${emcrzdm_dir}/${COMPONENT}/${RUN}.${VDATE}
+echo "Making ${COMPONENT_RUN_VDATE_web_dir} on ${webhost}"
+ssh -q -l ${webhost_id} ${webhost} "mkdir -p ${COMPONENT_RUN_VDATE_web_dir}"
+if [ $? -ne 0 ]; then
+    echo "ERROR: Could not make ${COMPONENT_RUN_VDATE_web_dir} on ${webhost}"
+    exit 1
+fi
+echo "Transfering ${nco_para}/plots/${COMPONENT}/${RUN}.${VDATE}/*.tar to ${COMPONENT_RUN_VDATE_web_dir} on ${webhost}"
+rsync -ahr -P ${nco_para}/plots/${COMPONENT}/${RUN}.${VDATE}/*.tar ${webhost_id}@${webhost}:${COMPONENT_RUN_VDATE_web_dir}/.
+
+#### Remove old directories
+rm_VDATE=$($NDATE -72 ${VDATE}00 |cut -c1-8)
+COMPONENT_RUN_rm_VDATE_web_dir=${emcrzdm_dir}/${COMPONENT}/${RUN}.${rm_VDATE}
+echo "Removing ${COMPONENT_RUN_rm_VDATE_web_dir} on ${webhost}"
+ssh -q -l ${webhost_id} ${webhost} "rm -r ${COMPONENT_RUN_rm_VDATE_web_dir}"
