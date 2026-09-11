@@ -20,7 +20,7 @@ args = parser.parse_args()
 matching_YYYYmm_dirs = glob.glob(
     os.path.join(online_evs_dir, args.component, f"*{args.YYYYmm}*")
 )
-RUN_list = ["atmos", "headline", "ocean", "wave"]
+RUN_list = ["atmos", "chem", "headline", "ocean", "wave"]
 archive_dir = []
 for check_dir in matching_YYYYmm_dirs:
     check_subdir = check_dir.rpartition("/")[2]
